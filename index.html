@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
-    <script src="index.js"></script>
     <title>DND 5e Spells</title>
   </head>
   <body>
-    <div id="page-title"></div>
-    <h1 class="page-header">Dungeons & Dragons</h1>
-    <h2 class="page-subHeader">5e Spell Organizer</h2>
-    <div id="spells"></div>
-    <form action="search-spell" method="get">
-      Type Spell To Add
-      <input type="text" placeholder="Spell Name" id="search-box"/>
-      <input type="submit" value="ADD" class="submit-btn" />
-    </form>
-    <div id="spell-display"></div>
+    <div id="page-title">
+      <h1 class="page-header">Dungeons & Dragons</h1>
+      <h2 class="page-subHeader">5e Spell Organizer</h2>
+    </div>
+    <div id="spell-lookup">
+      <form id="search-spell">
+        <label>Type Spell To Add</label>
+        <input type="text" placeholder="Spell Name" id="search-box"/>
+        <input type="submit" value="ADD" class="add-btn" />
+      </form>
+    </div>
+    <div id="spell-card-display"></div>
   </body>
+  <script src="js/index.js"></script>
 </html>

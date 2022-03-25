@@ -1,7 +1,7 @@
-/* body {
+body {
   background-image: url("/Users/josefletes/Flatiron/phase1/images/parchmentBackground.png");
   background-size: 1900px;
-} */
+}
 
 .page-header {
   color: #750e05;
@@ -21,7 +21,14 @@
   font-weight: bold;
 }
 
+.user-instructions {
+  color: black;
+  /* text-shadow: 0 0 1px black; */
+  font-family: fantasy;
+}
+
 form {
+  font-size: 20px;
   text-shadow: 0px 0px 1px black;
   font-weight: bold;
   text-align: left;
@@ -31,25 +38,29 @@ form {
 }
 
 #search-box {
+  font-size: 20px;
   margin-left: 5px;
+  padding-bottom: 5px;
 }
 
-.submit-btn {
+.add-btn {
   background-color: #750e05;
   border-color: black;
   font-family: fantasy;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
+  padding-top: 5px;
   text-shadow: 0 0 1px white;
   cursor: pointer;
 }
 
 .spell-card {
+  box-shadow: 5px 5px 5px black;
   display: inline-block;
   margin-top: 50px;
   margin-left: 10px;
   margin-right: 10px;
-  background-color: #750e05;
+  background-color: #8e2117;
   max-width: 550px;
   padding-left: 10px;
   padding-right: 10px;
@@ -57,13 +68,14 @@ form {
 }
 
 dt {
-  font-family:monospace;
+  font-family: fantasy;
   font-size: 20px;
-  color: white;
-  text-shadow: 0 0 10px black;
+  color: black;
+  text-shadow: 0 0 1px black;
 }
 
 dd {
-  font-family: monospace;
+  font-family: fantasy;
   font-size: 16px;
+  color: white
 }

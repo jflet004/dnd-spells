@@ -6,11 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handleSubmit(e) {
   e.preventDefault();
+
   const spellNameInput = e.target[0].value;
   fetch(`https://www.dnd5eapi.co/api/spells/${spellNameInput}`)
   .then(response => response.json())
   .then(spellData => createSpellCard(spellData))
   .catch(error => alert(error))
+
+  spellForm.reset();
 }
 
 function createSpellCard(spells) {

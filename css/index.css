@@ -3,7 +3,7 @@ body {
   background-size: 1900px;
 }
 
-h1 {
+.page-header {
   color: #750e05;
   text-shadow: 2px 2px 8px black;
   /* font-size: 50px; */
@@ -11,7 +11,7 @@ h1 {
   font-weight: bold;
 }
 
-h2 {
+.page-subHeader {
   color: black;
   text-shadow: 2px 2px 7px black;
   margin-left: 30px;

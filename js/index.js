@@ -53,9 +53,21 @@ function createSpellCard(spells) {
   spellRangeDesc.textContent = spells.range;
   spellRange.appendChild(spellRangeDesc);
   
+  const spellRitual = document.createElement('dt');
+  spellRitual.className = 'ritual';
+  spellRitual.textContent = 'Ritual Needed?:';
+  const ritualDesc = document.createElement('dd');
+  ritualDesc.textContent = spells.ritual;
+  ritual.appendChild(ritualDesc);
+  
+  const spellDuration = document.createElement('dt');
+  spellDuration.className = 'duration';
+  spellDuration.textContent = 'Duration:';
+  const durationDesc = document.createElement('dd');
+  durationDesc.textContent = spells.ritual;
+  spellDuration.appendChild(durationDesc);
   
   
-  
-  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange);
+  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, ritual);
   
 }

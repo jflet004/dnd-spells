@@ -18,7 +18,7 @@ function handleSubmit(e) {
 
 function createSpellCard(spells) {
   const spellDisplay = document.querySelector('#spell-card-display');
-  const spellCard = document.createElement('dl');
+  const spellCard = document.createElement('div');
   spellCard.className = 'spell-card';
   
   const spellName = document.createElement('dt');
@@ -97,8 +97,10 @@ function createSpellCard(spells) {
   const damageTypeDesc = document.createElement('dd');
   damageTypeDesc.textContent = spells.damage.damage_type.name;
   spellDamageType.appendChild(damageTypeDesc);
-  
 
-  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime, spellAttackType, spellDamageType);
+  const cardBreak = document.createElement('br');
+
+  spellDisplay.appendChild(spellCard);
+  spellCard.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime, spellAttackType, spellDamageType, cardBreak);
   
 }

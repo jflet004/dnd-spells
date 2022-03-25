@@ -20,12 +20,32 @@ function createSpellCard(spells) {
   
   const spellName = document.createElement('dt');
   spellName.className = 'spell-name';
-  spellName.textContent = 'Name';
+  spellName.textContent = 'Spell:';
   const spellNameDef = document.createElement('dd');
   spellNameDef.textContent = spells.name;
   spellName.appendChild(spellNameDef);
   
+  const spellLevel = document.createElement('dt');
+  spellLevel.className = 'spell-lvl';
+  spellLevel.textContent = 'Level:';
+  const spellLevelDef = document.createElement('dd');
+  spellLevelDef.textContent = spells.level;
+  spellLevel.appendChild(spellLevelDef);
   
-  spellDisplay.append(spellName);
+  const spellDescription = document.createElement('dt');
+  spellDescription.className = 'spell-desc';
+  spellDescription.textContent = 'Description:';
+  const spellDescriptionDef = document.createElement('dd');
+  spellDescriptionDef.textContent = spells.desc;
+  spellDescription.appendChild(spellDescriptionDef);
+  
+  const spellHigherLvlDesc = document.createElement('dt');
+  spellHigherLvlDesc.className = 'spell-highLvl';
+  spellHigherLvlDesc.textContent = 'At Higher Level:';
+  const higherLvlDef = document.createElement('dd');
+  higherLvlDef.textContent = spells.higher_level;
+  spellHigherLvlDesc.appendChild(higherLvlDef);
+  
+  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc);
   
 }

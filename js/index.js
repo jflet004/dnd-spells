@@ -55,10 +55,10 @@ function createSpellCard(spells) {
   
   const spellRitual = document.createElement('dt');
   spellRitual.className = 'ritual';
-  spellRitual.textContent = 'Ritual Needed?:';
+  spellRitual.textContent = 'Ritual:';
   const ritualDesc = document.createElement('dd');
   ritualDesc.textContent = spells.ritual;
-  ritual.appendChild(ritualDesc);
+  spellRitual.appendChild(ritualDesc);
   
   const spellDuration = document.createElement('dt');
   spellDuration.className = 'duration';
@@ -69,7 +69,7 @@ function createSpellCard(spells) {
   
   const spellConcentration = document.createElement('dt');
   spellConcentration.className = 'concentration';
-  spellConcentration.textContent = 'Concentration Needed?:';
+  spellConcentration.textContent = 'Concentration:';
   const concentrationDesc = document.createElement('dd');
   concentrationDesc.textContent = spells.concentration;
   spellConcentration.appendChild(concentrationDesc);
@@ -78,12 +78,24 @@ function createSpellCard(spells) {
   spellCastingTime.className = 'casting';
   spellCastingTime.textContent = 'Casting Time:';
   const castingTimeDesc = document.createElement('dd');
-  castingTimeDesc.textContent = spells.duration;
+  castingTimeDesc.textContent = spells.casting_time;
   spellCastingTime.appendChild(castingTimeDesc);
-
-
+  
+  const spellAttackType = document.createElement('dt');
+  spellAttackType.className = 'attack-type';
+  spellAttackType.textContent = 'Attack Type:';
+  const attackTypeDesc = document.createElement('dd');
+  attackTypeDesc.textContent = spells.attack_type;
+  spellAttackType.appendChild(attackTypeDesc);
+  
+  const spellDamageType = document.createElement('dt');
+  spellDamageType.className = 'damage-type';
+  spellDamageType.textContent = 'Damage Type:';
+  const damageTypeDesc = document.createElement('dd');
+  damageTypeDesc.textContent = spells.damage.damage_type.name;
+  spellDamageType.appendChild(damageTypeDesc);
   
 
-  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime);
+  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime, spellAttackType, spellDamageType);
   
 }

@@ -1,12 +1,19 @@
+body {
+  background-image: url("/Users/josefletes/Flatiron/phase1/images/parchmentBackground.png");
+  background-size: 1900px;
+}
+
 h1 {
   color: #750e05;
-  font-size: 50px;
+  text-shadow: 2px 2px 8px black;
+  /* font-size: 50px; */
   font-family: fantasy;
   font-weight: bold;
 }
 
 h2 {
   color: black;
+  text-shadow: 2px 2px 7px black;
   margin-left: 30px;
   margin-top: -40px;
   font-size: 30px;
@@ -15,6 +22,7 @@ h2 {
 }
 
 form {
+  /* text-shadow: 1px 1px 2px black; */
   font-weight: bold;
   text-align: center;
   font-family: fantasy;
@@ -28,6 +36,7 @@ form {
 
 input[type=submit] {
   font-family: fantasy;
+  cursor: pointer;
 }
 
 /* input[type=text] {

@@ -1,1 +1,35 @@
+h1 {
+  color: #750e05;
+  font-size: 50px;
+  font-family: fantasy;
+  font-weight: bold;
+}
 
+h2 {
+  color: black;
+  margin-left: 30px;
+  margin-top: -40px;
+  font-size: 30px;
+  font-family: fantasy;
+  font-weight: bold;
+}
+
+form {
+  font-weight: bold;
+  text-align: center;
+  font-family: fantasy;
+  margin-top: 70px;
+}
+
+#search-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input[type=submit] {
+  font-family: fantasy;
+}
+
+/* input[type=text] {
+  font-family: fantasy;
+} */

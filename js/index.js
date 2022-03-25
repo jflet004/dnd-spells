@@ -46,6 +46,16 @@ function createSpellCard(spells) {
   higherLvlDef.textContent = spells.higher_level;
   spellHigherLvlDesc.appendChild(higherLvlDef);
   
-  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc);
+  const spellRange = document.createElement('dt');
+  spellRange.className = 'spell-range';
+  spellRange.textContent = 'Range:';
+  const spellRangeDesc = document.createElement('dd');
+  spellRangeDesc.textContent = spells.range;
+  spellRange.appendChild(spellRangeDesc);
+  
+  
+  
+  
+  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange);
   
 }

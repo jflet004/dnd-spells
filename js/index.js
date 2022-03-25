@@ -64,10 +64,26 @@ function createSpellCard(spells) {
   spellDuration.className = 'duration';
   spellDuration.textContent = 'Duration:';
   const durationDesc = document.createElement('dd');
-  durationDesc.textContent = spells.ritual;
+  durationDesc.textContent = spells.duration;
   spellDuration.appendChild(durationDesc);
   
+  const spellConcentration = document.createElement('dt');
+  spellConcentration.className = 'concentration';
+  spellConcentration.textContent = 'Concentration Needed?:';
+  const concentrationDesc = document.createElement('dd');
+  concentrationDesc.textContent = spells.concentration;
+  spellConcentration.appendChild(concentrationDesc);
   
-  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, ritual);
+  const spellCastingTime = document.createElement('dt');
+  spellCastingTime.className = 'casting';
+  spellCastingTime.textContent = 'Casting Time:';
+  const castingTimeDesc = document.createElement('dd');
+  castingTimeDesc.textContent = spells.duration;
+  spellCastingTime.appendChild(castingTimeDesc);
+
+
+  
+
+  spellDisplay.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime);
   
 }

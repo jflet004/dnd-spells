@@ -67,6 +67,10 @@ form {
   padding-top: 10px;
 }
 
+.xBtn {
+  float: right;
+}
+
 dt {
   font-family: fantasy;
   font-size: 20px;

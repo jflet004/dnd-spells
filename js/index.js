@@ -32,7 +32,7 @@ function createSpellCard(spells) {
   spellLevel.className = 'spell-lvl';
   spellLevel.textContent = 'Level:';
   const spellLevelDef = document.createElement('dd');
-  if(spells.level === 0) {
+  if (spells.level === 0) {
     spellLevelDef.textContent = 'Cantrip';
     spellLevel.appendChild(spellLevelDef);
   } else {
@@ -49,7 +49,7 @@ function createSpellCard(spells) {
 
   const spellHigherLvlDesc = document.createElement('dt');
   spellHigherLvlDesc.className = 'spell-highLvl';
-  if(spells.higher_level.length !== 0) {
+  if (spells.higher_level.length !== 0) {
     spellHigherLvlDesc.textContent = 'At Higher Level:';
     const higherLvlDef = document.createElement('dd');
     higherLvlDef.textContent = spells.higher_level;
@@ -95,7 +95,7 @@ function createSpellCard(spells) {
 
   const spellAttackType = document.createElement('dt');
   spellAttackType.className = 'attack-type';
-  if(spells.attack_type){
+  if (spells.attack_type) {
     spellAttackType.textContent = 'Attack Type:';
     const attackTypeDesc = document.createElement('dd');
     attackTypeDesc.textContent = spells.attack_type;
@@ -115,9 +115,13 @@ function createSpellCard(spells) {
     spellDamageType.remove();
   }
 
+  const delBtn = document.createElement('button');
+  delBtn.className = 'xBtn';
+  delBtn.textContent = 'x'
+
   const cardBreak = document.createElement('br');
 
   spellDisplay.appendChild(spellCard);
-  spellCard.append(spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime, spellAttackType, spellDamageType, cardBreak);
+  spellCard.append(delBtn, spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime, spellAttackType, spellDamageType, cardBreak);
 
 }

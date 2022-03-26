@@ -20,14 +20,20 @@ function createSpellCard(spells) {
   const spellDisplay = document.querySelector('#spell-card-display');
   const spellCard = document.createElement('div');
   spellCard.className = 'spell-card';
-
+  
+  const delBtn = document.createElement('button');
+  delBtn.className = 'xBtn';
+  delBtn.textContent = 'x';
+  
+  delBtn.addEventListener('click', () => spellCard.remove());
+  
   const spellName = document.createElement('dt');
   spellName.className = 'spell-name';
   spellName.textContent = 'Spell:';
   const spellNameDef = document.createElement('dd');
   spellNameDef.textContent = spells.name;
   spellName.appendChild(spellNameDef);
-
+  
   const spellLevel = document.createElement('dt');
   spellLevel.className = 'spell-lvl';
   spellLevel.textContent = 'Level:';
@@ -39,14 +45,14 @@ function createSpellCard(spells) {
     spellLevelDef.textContent = spells.level;
     spellLevel.appendChild(spellLevelDef);
   }
-
+  
   const spellDescription = document.createElement('dt');
   spellDescription.className = 'spell-desc';
   spellDescription.textContent = 'Description:';
   const spellDescriptionDef = document.createElement('dd');
   spellDescriptionDef.textContent = spells.desc;
   spellDescription.appendChild(spellDescriptionDef);
-
+  
   const spellHigherLvlDesc = document.createElement('dt');
   spellHigherLvlDesc.className = 'spell-highLvl';
   if (spells.higher_level.length !== 0) {
@@ -57,42 +63,42 @@ function createSpellCard(spells) {
   } else {
     spellHigherLvlDesc.remove();
   }
-
+  
   const spellRange = document.createElement('dt');
   spellRange.className = 'spell-range';
   spellRange.textContent = 'Range:';
   const spellRangeDesc = document.createElement('dd');
   spellRangeDesc.textContent = spells.range;
   spellRange.appendChild(spellRangeDesc);
-
+  
   const spellRitual = document.createElement('dt');
   spellRitual.className = 'ritual';
   spellRitual.textContent = 'Ritual:';
   const ritualDesc = document.createElement('dd');
   ritualDesc.textContent = spells.ritual;
   spellRitual.appendChild(ritualDesc);
-
+  
   const spellDuration = document.createElement('dt');
   spellDuration.className = 'duration';
   spellDuration.textContent = 'Duration:';
   const durationDesc = document.createElement('dd');
   durationDesc.textContent = spells.duration;
   spellDuration.appendChild(durationDesc);
-
+  
   const spellConcentration = document.createElement('dt');
   spellConcentration.className = 'concentration';
   spellConcentration.textContent = 'Concentration:';
   const concentrationDesc = document.createElement('dd');
   concentrationDesc.textContent = spells.concentration;
   spellConcentration.appendChild(concentrationDesc);
-
+  
   const spellCastingTime = document.createElement('dt');
   spellCastingTime.className = 'casting';
   spellCastingTime.textContent = 'Casting Time:';
   const castingTimeDesc = document.createElement('dd');
   castingTimeDesc.textContent = spells.casting_time;
   spellCastingTime.appendChild(castingTimeDesc);
-
+  
   const spellAttackType = document.createElement('dt');
   spellAttackType.className = 'attack-type';
   if (spells.attack_type) {
@@ -103,7 +109,7 @@ function createSpellCard(spells) {
   } else {
     spellAttackType.remove();
   }
-
+  
   const spellDamageType = document.createElement('dt');
   spellDamageType.className = 'damage-type';
   if (spells.damage) {
@@ -114,14 +120,11 @@ function createSpellCard(spells) {
   } else {
     spellDamageType.remove();
   }
-
-  const delBtn = document.createElement('button');
-  delBtn.className = 'xBtn';
-  delBtn.textContent = 'x'
-
+  
+  
   const cardBreak = document.createElement('br');
-
+  
   spellDisplay.appendChild(spellCard);
   spellCard.append(delBtn, spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellRitual, spellDuration, spellConcentration, spellCastingTime, spellAttackType, spellDamageType, cardBreak);
-
+  
 }

@@ -1,9 +1,7 @@
 const spellForm = document.querySelector('#search-spell');
-const spellCollection = document.querySelector('#spell-card-display');
 
 document.addEventListener('DOMContentLoaded', () => {
   spellForm.addEventListener('submit', handleSubmit)
-  resetBtn();
 });
 
 function handleSubmit(e) {
@@ -18,14 +16,6 @@ function handleSubmit(e) {
   spellForm.reset();
 }
 
-function resetBtn() {
-  const resetBtn = document.createElement('button')
-  resetBtn.className = 'reset-btn';
-  resetBtn.textContent = 'RESET';
-  spellForm.append(resetBtn);
-
-  resetBtn.addEventListener('click', () => spellCollection.remove());
-}
 function createSpellCard(spells) {
   const spellDisplay = document.querySelector('#spell-card-display');
   const spellCard = document.createElement('div');
@@ -130,7 +120,6 @@ function createSpellCard(spells) {
   } else {
     spellDamageType.remove();
   }
-
 
   const cardBreak = document.createElement('br');
 

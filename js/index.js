@@ -71,12 +71,12 @@ function createSpellCard(spells) {
   spellRangeDesc.textContent = spells.range;
   spellRange.appendChild(spellRangeDesc);
 
-  const spellRitual = document.createElement('dt');
-  spellRitual.className = 'ritual';
-  spellRitual.textContent = 'Ritual:';
-  const ritualDesc = document.createElement('dd');
-  ritualDesc.textContent = spells.ritual;
-  spellRitual.appendChild(ritualDesc);
+  // const spellRitual = document.createElement('dt');
+  // spellRitual.className = 'ritual';
+  // spellRitual.textContent = 'Ritual:';
+  // const ritualDesc = document.createElement('dd');
+  // ritualDesc.textContent = spells.ritual;
+  // spellRitual.appendChild(ritualDesc);
 
   const spellDuration = document.createElement('dt');
   spellDuration.className = 'duration';
@@ -85,12 +85,12 @@ function createSpellCard(spells) {
   durationDesc.textContent = spells.duration;
   spellDuration.appendChild(durationDesc);
 
-  const spellConcentration = document.createElement('dt');
-  spellConcentration.className = 'concentration';
-  spellConcentration.textContent = 'Concentration:';
-  const concentrationDesc = document.createElement('dd');
-  concentrationDesc.textContent = spells.concentration;
-  spellConcentration.appendChild(concentrationDesc);
+  // const spellConcentration = document.createElement('dt');
+  // spellConcentration.className = 'concentration';
+  // spellConcentration.textContent = 'Concentration:';
+  // const concentrationDesc = document.createElement('dd');
+  // concentrationDesc.textContent = spells.concentration;
+  // spellConcentration.appendChild(concentrationDesc);
 
   const spellCastingTime = document.createElement('dt');
   spellCastingTime.className = 'casting';

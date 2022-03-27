@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   inputBox.addEventListener('keydown', handleKeyDown)
 });
 function handleKeyDown(e) {
-  const errorMsg = document.querySelector('#error-message');
+  const errorMsg = document.querySelector('#error-space');
   if(e.code === 'Space') {
     errorMsg.style.display = 'block';
     setTimeout(() => errorMsg.style.display = 'none', 5000);

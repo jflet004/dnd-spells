@@ -84,3 +84,8 @@ dd {
   font-size: 16px;
   color: white
 }
+
+#error-space {
+  font-size: 14px;
+  float: inline-start;
+}

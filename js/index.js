@@ -16,10 +16,16 @@ function handleSubmit(e) {
   e.preventDefault();
   const spellNameInput = e.target[0].value;
   fetch(`https://www.dnd5eapi.co/api/spells/${spellNameInput}`)
-    .then(response => response.json())
-    .then(spellData => createSpellCard(spellData))
-    .catch(error => alert('Spell Not Found'))
-    spellForm.reset();
+  .then(response => response.json())
+  .then(spellData => createSpellCard(spellData))
+  .catch(() => missingSpell())
+  spellForm.reset();
+}
+
+function missingSpell() {
+    const noSpell = document.querySelector('#error-spell');
+    noSpell.style.display = 'block';
+    setTimeout(() => noSpell.style.display = 'none', 3000);
   }
   function createSpellCard(spells) {
     const spellDisplay = document.querySelector('#spell-card-display');

@@ -69,6 +69,7 @@ form {
 
 .xBtn {
   float: right;
+  cursor: pointer;
 }
 
 dt {

@@ -116,12 +116,26 @@ function missingSpell() {
       spellDamageType.appendChild(damageTypeDesc);
     }
     
+    const spellAtSlotLevel = document.createElement('dt');
+    spellAtSlotLevel.className = 'spell-at-slotLevel';
+    if (spells.damage) {
+      spellAtSlotLevel.textContent = 'Spell Level:';
+      const spellLevelList = document.createElement('ul');
+      spellLevelList.className = 'level-list'
+      Object.keys(spells.damage.damage_at_slot_level).forEach(level => {
+        const spellLevelItem = document.createElement('li');
+        spellLevelItem.className = 'spell-levelItem'
+        spellLevelItem.textContent = `${level}: ${spells.damage.damage_at_slot_level[level]}`;
+        spellLevelList.appendChild(spellLevelItem);
+      });
+      spellAtSlotLevel.appendChild(spellLevelList);
+    }
     //Creates spacing between cards
     const cardBreak = document.createElement('br');
     
     //Appends card to display and card info to card
+    spellCard.append(delBtn, spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellDuration, spellCastingTime, spellAttackType, spellDamageType, spellAtSlotLevel, cardBreak);
     spellDisplay.appendChild(spellCard);
-    spellCard.append(delBtn, spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellDuration, spellCastingTime, spellAttackType, spellDamageType, cardBreak);
     
   }
 

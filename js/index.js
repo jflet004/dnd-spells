@@ -52,6 +52,7 @@ function missingSpell() {
     spellLevel.className = 'spell-lvl';
     spellLevel.textContent = 'Level:';
     const spellLevelDef = document.createElement('dd');
+    spellLevelDef.textContent = spells.level;
     spellLevel.appendChild(spellLevelDef);
     
      //Creates card section for spell Description:
@@ -106,7 +107,7 @@ function missingSpell() {
       spellAttackType.appendChild(attackTypeDesc);
     }
     
-     //Creates card section for the spell's Damage Type:
+    //Creates card section for the spell's Damage Type:
     const spellDamageType = document.createElement('dt');
     spellDamageType.className = 'damage-type';
     if (spells.damage) {
@@ -116,6 +117,7 @@ function missingSpell() {
       spellDamageType.appendChild(damageTypeDesc);
     }
     
+    //Creates card section for the spell's At Slot Level:
     const spellAtSlotLevel = document.createElement('dt');
     spellAtSlotLevel.className = 'spell-at-slotLevel';
     if (spells.damage) {
@@ -130,6 +132,8 @@ function missingSpell() {
       });
       spellAtSlotLevel.appendChild(spellLevelList);
     }
+
+
     //Creates spacing between cards
     const cardBreak = document.createElement('br');
     

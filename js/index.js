@@ -43,81 +43,83 @@ function createSpellCard(spells) {
   spellName(spells, spellCard);
   spellLevel(spells, spellCard);
   spellDescription(spells, spellCard);
+  spellHigherLevel(spells, spellCard);
+  spellHealLevel(spells, spellCard);
 
 
-  //Creates card section for description of Higher Level: of spell:
-  const spellHigherLvlDesc = document.createElement('dt');
-  spellHigherLvlDesc.className = 'spell-highLvl';
-  if (spells.higher_level.length !== 0) {
-    spellHigherLvlDesc.textContent = 'At Higher Level:';
-    const higherLvlDef = document.createElement('dd');
-    higherLvlDef.textContent = spells.higher_level;
-    spellHigherLvlDesc.appendChild(higherLvlDef);
-  }
+  // //Creates card section for description of Higher Level: of spell:
+  // const spellHigherLvlDesc = document.createElement('dt');
+  // spellHigherLvlDesc.className = 'spell-highLvl';
+  // if (spells.higher_level.length !== 0) {
+  //   spellHigherLvlDesc.textContent = 'At Higher Level:';
+  //   const higherLvlDef = document.createElement('dd');
+  //   higherLvlDef.textContent = spells.higher_level;
+  //   spellHigherLvlDesc.appendChild(higherLvlDef);
+  // }
 
-  //Creates card section for Range: of spell
-  const spellRange = document.createElement('dt');
-  spellRange.className = 'spell-range';
-  spellRange.textContent = 'Range:';
-  const spellRangeDesc = document.createElement('dd');
-  spellRangeDesc.textContent = spells.range;
-  spellRange.appendChild(spellRangeDesc);
+  // //Creates card section for Range: of spell
+  // const spellRange = document.createElement('dt');
+  // spellRange.className = 'spell-range';
+  // spellRange.textContent = 'Range:';
+  // const spellRangeDesc = document.createElement('dd');
+  // spellRangeDesc.textContent = spells.range;
+  // spellRange.appendChild(spellRangeDesc);
 
-  //Creates card section for Duration: of spell:
-  const spellDuration = document.createElement('dt');
-  spellDuration.className = 'duration';
-  spellDuration.textContent = 'Duration:';
-  const durationDesc = document.createElement('dd');
-  durationDesc.textContent = spells.duration;
-  spellDuration.appendChild(durationDesc);
+  // //Creates card section for Duration: of spell:
+  // const spellDuration = document.createElement('dt');
+  // spellDuration.className = 'duration';
+  // spellDuration.textContent = 'Duration:';
+  // const durationDesc = document.createElement('dd');
+  // durationDesc.textContent = spells.duration;
+  // spellDuration.appendChild(durationDesc);
 
-  //Creates card section for the spell's Casting Time:
-  const spellCastingTime = document.createElement('dt');
-  spellCastingTime.className = 'casting';
-  spellCastingTime.textContent = 'Casting Time:';
-  const castingTimeDesc = document.createElement('dd');
-  castingTimeDesc.textContent = spells.casting_time;
-  spellCastingTime.appendChild(castingTimeDesc);
+  // //Creates card section for the spell's Casting Time:
+  // const spellCastingTime = document.createElement('dt');
+  // spellCastingTime.className = 'casting';
+  // spellCastingTime.textContent = 'Casting Time:';
+  // const castingTimeDesc = document.createElement('dd');
+  // castingTimeDesc.textContent = spells.casting_time;
+  // spellCastingTime.appendChild(castingTimeDesc);
 
-  //Creates card section for the spell's Attack Type:
-  const spellAttackType = document.createElement('dt');
-  spellAttackType.className = 'attack-type';
-  if (spells.attack_type) {
-    spellAttackType.textContent = 'Attack Type:';
-    const attackTypeDesc = document.createElement('dd');
-    attackTypeDesc.textContent = spells.attack_type;
-    spellAttackType.appendChild(attackTypeDesc);
-  }
+  // //Creates card section for the spell's Attack Type:
+  // const spellAttackType = document.createElement('dt');
+  // spellAttackType.className = 'attack-type';
+  // if (spells.attack_type) {
+  //   spellAttackType.textContent = 'Attack Type:';
+  //   const attackTypeDesc = document.createElement('dd');
+  //   attackTypeDesc.textContent = spells.attack_type;
+  //   spellAttackType.appendChild(attackTypeDesc);
+  // }
 
-  //Creates card section for the spell's Damage Type:
-  const spellDamageType = document.createElement('dt');
-  spellDamageType.className = 'damage-type';
-  if (spells.damage) {
-    spellDamageType.textContent = 'Damage Type:';
-    const damageTypeDesc = document.createElement('dd');
-    damageTypeDesc.textContent = spells.damage.damage_type.name;
-    spellDamageType.appendChild(damageTypeDesc);
-  }
+  // //Creates card section for the spell's Damage Type:
+  // const spellDamageType = document.createElement('dt');
+  // spellDamageType.className = 'damage-type';
+  // if (spells.damage) {
+  //   spellDamageType.textContent = 'Damage Type:';
+  //   const damageTypeDesc = document.createElement('dd');
+  //   damageTypeDesc.textContent = spells.damage.damage_type.name;
+  //   spellDamageType.appendChild(damageTypeDesc);
+  // }
 
-  //Creates card section for the spell's At Slot Level:
-  const spellAtSlotLevel = document.createElement('dt');
-  spellAtSlotLevel.className = 'spell-at-slotLevel';
-  if (spells.damage) {
-    spellAtSlotLevel.textContent = 'Spell Level:';
-    const spellLevelList = document.createElement('ul');
-    spellLevelList.className = 'level-list'
-    Object.keys(spells.damage.damage_at_slot_level).forEach(level => {
-      const spellLevelItem = document.createElement('li');
-      spellLevelItem.className = 'spell-levelItem'
-      spellLevelItem.textContent = `${level}: ${spells.damage.damage_at_slot_level[level]}`;
-      spellLevelList.appendChild(spellLevelItem);
-    });
-    spellAtSlotLevel.appendChild(spellLevelList);
-  }
+  // //Creates card section for the spell's At Slot Level:
+  // const spellAtSlotLevel = document.createElement('dt');
+  // spellAtSlotLevel.className = 'spell-at-slotLevel';
+  // if (spells.damage) {
+  //   spellAtSlotLevel.textContent = 'Spell Level:';
+  //   const spellLevelList = document.createElement('ul');
+  //   spellLevelList.className = 'level-list'
+  //   Object.keys(spells.damage.damage_at_slot_level).forEach(level => {
+  //     const spellLevelItem = document.createElement('li');
+  //     spellLevelItem.className = 'spell-levelItem'
+  //     spellLevelItem.textContent = `${level}: ${spells.damage.damage_at_slot_level[level]}`;
+  //     spellLevelList.appendChild(spellLevelItem);
+  //   });
+  //   spellAtSlotLevel.appendChild(spellLevelList);
+  // }
 
 
-  //Creates spacing between cards
-  const cardBreak = document.createElement('br');
+  // //Creates spacing between cards
+  // const cardBreak = document.createElement('br');
 
   //Appends card to display and card info to card
   // spellCard.append(delBtn, spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellDuration, spellCastingTime, spellAttackType, spellDamageType, spellAtSlotLevel, cardBreak);
@@ -136,6 +138,7 @@ function spellName(spells, card) {
   title.appendChild(description);
   card.append(title);
 }
+
 //Level
 function spellLevel(spells, card) {
   const title = document.createElement('dt');
@@ -161,7 +164,7 @@ function spellDescription(spells, card) {
 //Higher Level
 function spellHigherLevel(spells, card) {
   const title = document.createElement('dt');
-  title.className = 'spell-highlvl';
+  title.className = 'spell-highLvl';
   if (spells.higher_level.length !== 0) {
     title.textContent = 'Higher Level:';
     const description = document.createElement('dd');
@@ -171,10 +174,26 @@ function spellHigherLevel(spells, card) {
   }
 }
 
-
-
-//Higher Level
 //Heal at Slot Level
+function spellHealLevel(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-at-slotLevel'
+  if(spells.heal_at_slot_level) {
+    title.textContent = 'Heal at Slot Level: ';
+    const list = document.createElement('ul');
+    list.className = 'level-list'
+    Object.entries(spells.heal_at_slot_level).forEach(element => {
+      const level = document.createElement('li');
+      level.className = 'spell-levelItem'
+      level.textContent = `Lvl ${element[0]}: ${element[1]}`;
+      list.appendChild(level);
+      title.appendChild(list);
+    });
+    card.append(title);
+  }
+}
+
+
 //Range
 //Components
 //Material
@@ -187,5 +206,3 @@ function spellHigherLevel(spells, card) {
 //DC Type(name)
 //DC Success
 //DC desc
-
-

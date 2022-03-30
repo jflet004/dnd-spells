@@ -42,16 +42,8 @@ function createSpellCard(spells) {
 
   spellName(spells, spellCard);
   spellLevel(spells, spellCard);
+  spellDescription(spells, spellCard);
 
-
-
-  //Creates card section for spell Description:
-  const spellDescription = document.createElement('dt');
-  spellDescription.className = 'spell-desc';
-  spellDescription.textContent = 'Description:';
-  const spellDescriptionDef = document.createElement('dd');
-  spellDescriptionDef.textContent = spells.desc;
-  spellDescription.appendChild(spellDescriptionDef);
 
   //Creates card section for description of Higher Level: of spell:
   const spellHigherLvlDesc = document.createElement('dt');
@@ -151,6 +143,17 @@ function spellLevel(spells, card) {
   title.textContent = 'Level:';
   const description = document.createElement('dd');
   description.textContent = spells.level;
+  title.appendChild(description);
+  card.append(title);
+}
+
+//Description
+function spellDescription(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-description';
+  title.textContent = 'Description:';
+  const description = document.createElement('dd');
+  description.textContent = spells.desc;
   title.appendChild(description);
   card.append(title);
 }

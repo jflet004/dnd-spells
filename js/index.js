@@ -51,7 +51,8 @@ function createSpellCard(spells) {
   spellAttackType(spells, spellCard);
   spellDamageType(spells, spellCard);
   spellDamageAtSlotLevel(spells, spellCard);
-
+  spellDcType(spells, spellCard);
+  // spellDamageAtCharacterLevel(spells, spellCard);
   // //Creates card section for the spell's Damage Type:
   // const spellDamageType = document.createElement('dt');
   // spellDamageType.className = 'damage-type';
@@ -191,7 +192,7 @@ function spellCastingTime(spells, card) {
 function spellAttackType(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-attackType';
-  if(spells.attack_type) {
+  if (spells.attack_type) {
     title.textContent = 'Attack Type:';
     const description = document.createElement('dd');
     description.textContent = spells.attack_type;
@@ -204,7 +205,7 @@ function spellAttackType(spells, card) {
 function spellDamageType(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-dmgType';
-  if(spells.damage) {
+  if (spells.damage) {
     title.textContent = 'Damage Type:';
     const description = document.createElement('dd');
     description.textContent = spells.damage.damage_type.name;
@@ -233,7 +234,36 @@ function spellDamageAtSlotLevel(spells, card) {
 }
 
 //Damage at Character Level
+// function spellDamageAtCharacterLevel(spells, card) {
+//   const title = document.createElement('dt');
+//   title.className = 'damage-at-charLevel'
+//   // if (spells.damage) {
+//     title.textContent = 'Damage at Character Level: ';
+//     const list = document.createElement('ul');
+//     list.className = 'level-list'
+//     Object.keys(spells.damage.damage_at_character_level).forEach(element => {
+//       const level = document.createElement('li');
+//       level.className = 'spell-levelItem'
+//       level.textContent = `${element}: ${spells.damage.damage_at_character_level[element]}`;
+//       list.appendChild(level);
+//       title.appendChild(list);
+//     });
+//     card.append(title);
+//   // }
+// }
+
 
 //DC Type(name)
+function spellDcType(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-dcType';
+  if (spells.dc) {
+    title.textContent = 'DC Type:';
+    const description = document.createElement('dd');
+    description.textContent = spells.dc.dc_type.name;
+    title.appendChild(description);
+  }
+  card.append(title);
+}
 //DC Success
 //DC desc

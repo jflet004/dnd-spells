@@ -6,15 +6,17 @@
 
 ## Installation
 
-To install, just fork and clone this [repository](https://github.com/jflet004/dnd-spells).
+To install, just fork this [repository](https://github.com/jflet004/dnd-spells).
 
 ![GIF](images/forkAndClone.gif)
+
+Once you copy the HTTPS link, head over to the terminal and clone it.
 
 ```bash
 git clone https://github.com/jflet004/dnd-spells.git
 ```
 
-Once thats done, make sure you `cd` into the correct folder.
+When thats done, make sure you `cd` into the correct folder.
 
 ```bash
 cd dnd-spells

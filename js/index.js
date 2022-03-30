@@ -158,6 +158,19 @@ function spellDescription(spells, card) {
   card.append(title);
 }
 
+//Higher Level
+function spellHigherLevel(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-highlvl';
+  if (spells.higher_level.length !== 0) {
+    title.textContent = 'Higher Level:';
+    const description = document.createElement('dd');
+    description.textContent = spells.higher_level;
+    title.appendChild(description);
+    card.append(title);
+  }
+}
+
 
 
 //Higher Level

@@ -46,33 +46,10 @@ function createSpellCard(spells) {
   spellHigherLevel(spells, spellCard);
   spellHealLevel(spells, spellCard);
   spellRange(spells, spellCard);
+  spellDuration(spells, spellCard);
+  spellCastingTime(spells, spellCard);
+  spellAttackType(spells, spellCard);
 
-
-  // //Creates card section for Duration: of spell:
-  // const spellDuration = document.createElement('dt');
-  // spellDuration.className = 'duration';
-  // spellDuration.textContent = 'Duration:';
-  // const durationDesc = document.createElement('dd');
-  // durationDesc.textContent = spells.duration;
-  // spellDuration.appendChild(durationDesc);
-
-  // //Creates card section for the spell's Casting Time:
-  // const spellCastingTime = document.createElement('dt');
-  // spellCastingTime.className = 'casting';
-  // spellCastingTime.textContent = 'Casting Time:';
-  // const castingTimeDesc = document.createElement('dd');
-  // castingTimeDesc.textContent = spells.casting_time;
-  // spellCastingTime.appendChild(castingTimeDesc);
-
-  // //Creates card section for the spell's Attack Type:
-  // const spellAttackType = document.createElement('dt');
-  // spellAttackType.className = 'attack-type';
-  // if (spells.attack_type) {
-  //   spellAttackType.textContent = 'Attack Type:';
-  //   const attackTypeDesc = document.createElement('dd');
-  //   attackTypeDesc.textContent = spells.attack_type;
-  //   spellAttackType.appendChild(attackTypeDesc);
-  // }
 
   // //Creates card section for the spell's Damage Type:
   // const spellDamageType = document.createElement('dt');
@@ -210,6 +187,15 @@ function spellCastingTime(spells, card) {
 }
 
 //Attack Type
+function spellAttackType(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-attackType';
+  title.textContent = 'Attack Type:';
+  const description = document.createElement('dd');
+  description.textContent = spells.attack_type;
+  title.appendChild(description);
+  card.append(title);
+}
 
 //Damage Type (name)
 

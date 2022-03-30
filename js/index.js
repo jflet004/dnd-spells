@@ -50,7 +50,7 @@ function createSpellCard(spells) {
   spellCastingTime(spells, spellCard);
   spellAttackType(spells, spellCard);
   spellDamageType(spells, spellCard);
-
+  spellDamageAtSlotLevel(spells, spellCard);
 
   // //Creates card section for the spell's Damage Type:
   // const spellDamageType = document.createElement('dt');
@@ -191,11 +191,13 @@ function spellCastingTime(spells, card) {
 function spellAttackType(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-attackType';
-  title.textContent = 'Attack Type:';
-  const description = document.createElement('dd');
-  description.textContent = spells.attack_type;
-  title.appendChild(description);
-  card.append(title);
+  if(spells.attack_type) {
+    title.textContent = 'Attack Type:';
+    const description = document.createElement('dd');
+    description.textContent = spells.attack_type;
+    title.appendChild(description);
+    card.append(title);
+  }
 }
 
 //Damage Type (name)
@@ -212,6 +214,23 @@ function spellDamageType(spells, card) {
 }
 
 //Damage at Slot Level
+function spellDamageAtSlotLevel(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-at-slotLevel'
+  if (spells.damage) {
+    title.textContent = 'Damage at Slot Level: ';
+    const list = document.createElement('ul');
+    list.className = 'level-list'
+    Object.keys(spells.damage.damage_at_slot_level).forEach(element => {
+      const level = document.createElement('li');
+      level.className = 'spell-levelItem'
+      level.textContent = `${element}: ${spells.damage.damage_at_slot_level[element]}`;
+      list.appendChild(level);
+      title.appendChild(list);
+    });
+    card.append(title);
+  }
+}
 
 //Damage at Character Level
 

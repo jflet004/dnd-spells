@@ -49,6 +49,7 @@ function createSpellCard(spells) {
   spellDuration(spells, spellCard);
   spellCastingTime(spells, spellCard);
   spellAttackType(spells, spellCard);
+  spellDamageType(spells, spellCard);
 
 
   // //Creates card section for the spell's Damage Type:
@@ -198,6 +199,17 @@ function spellAttackType(spells, card) {
 }
 
 //Damage Type (name)
+function spellDamageType(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-dmgType';
+  if(spells.damage) {
+    title.textContent = 'Damage Type:';
+    const description = document.createElement('dd');
+    description.textContent = spells.damage.damage_type.name;
+    title.appendChild(description);
+  }
+  card.append(title);
+}
 
 //Damage at Slot Level
 

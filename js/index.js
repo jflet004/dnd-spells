@@ -52,6 +52,7 @@ function createSpellCard(spells) {
   spellDamageType(spells, spellCard);
   spellDamageAtSlotLevel(spells, spellCard);
   spellDcType(spells, spellCard);
+  // spellDcSuccess(spells, spellCard);
   // spellDamageAtCharacterLevel(spells, spellCard);
   // //Creates card section for the spell's Damage Type:
   // const spellDamageType = document.createElement('dt');
@@ -81,10 +82,11 @@ function createSpellCard(spells) {
 
 
   // //Creates spacing between cards
-  // const cardBreak = document.createElement('br');
+  const cardBreak = document.createElement('br');
 
   //Appends card to display and card info to card
   // spellCard.append(delBtn, spellName, spellLevel, spellDescription, spellHigherLvlDesc, spellRange, spellDuration, spellCastingTime, spellAttackType, spellDamageType, spellAtSlotLevel, cardBreak);
+  spellCard.append(delBtn, cardBreak)
   spellDisplay.appendChild(spellCard);
 
 }
@@ -253,17 +255,23 @@ function spellDamageAtSlotLevel(spells, card) {
 // }
 
 
-//DC Type(name)
-function spellDcType(spells, card) {
+//DC
+function spellDc(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-dcType';
   if (spells.dc) {
-    title.textContent = 'DC Type:';
+    title.textContent = 'DC:';
     const description = document.createElement('dd');
-    description.textContent = spells.dc.dc_type.name;
+    description.textContent = `Type: ${spells.dc.dc_type.name}`;
+    const description2 = document.createElement('dd');
+    description2.textContent = `Success: ${spells.dc.dc_success}`;
+    const description3 = document.createElement('dd');
+    description3.textContent = `Notes: ${spells.dc.desc}`;
     title.appendChild(description);
+    title.appendChild(description2);
+    title.appendChild(description3);
   }
   card.append(title);
 }
-//DC Success
-//DC desc
+
+//Area of Effect(type, size)

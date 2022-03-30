@@ -39,31 +39,14 @@ function createSpellCard(spells) {
   delBtn.textContent = 'x';
   delBtn.addEventListener('click', () => spellCard.remove());
 
-
+  //Spell card components
   spellName(spells, spellCard);
   spellLevel(spells, spellCard);
   spellDescription(spells, spellCard);
   spellHigherLevel(spells, spellCard);
   spellHealLevel(spells, spellCard);
+  spellRange(spells, spellCard);
 
-
-  // //Creates card section for description of Higher Level: of spell:
-  // const spellHigherLvlDesc = document.createElement('dt');
-  // spellHigherLvlDesc.className = 'spell-highLvl';
-  // if (spells.higher_level.length !== 0) {
-  //   spellHigherLvlDesc.textContent = 'At Higher Level:';
-  //   const higherLvlDef = document.createElement('dd');
-  //   higherLvlDef.textContent = spells.higher_level;
-  //   spellHigherLvlDesc.appendChild(higherLvlDef);
-  // }
-
-  // //Creates card section for Range: of spell
-  // const spellRange = document.createElement('dt');
-  // spellRange.className = 'spell-range';
-  // spellRange.textContent = 'Range:';
-  // const spellRangeDesc = document.createElement('dd');
-  // spellRangeDesc.textContent = spells.range;
-  // spellRange.appendChild(spellRangeDesc);
 
   // //Creates card section for Duration: of spell:
   // const spellDuration = document.createElement('dt');
@@ -178,7 +161,7 @@ function spellHigherLevel(spells, card) {
 function spellHealLevel(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-at-slotLevel'
-  if(spells.heal_at_slot_level) {
+  if (spells.heal_at_slot_level) {
     title.textContent = 'Heal at Slot Level: ';
     const list = document.createElement('ul');
     list.className = 'level-list'
@@ -193,16 +176,47 @@ function spellHealLevel(spells, card) {
   }
 }
 
-
 //Range
-//Components
-//Material
+function spellRange(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-range';
+  title.textContent = 'Range:';
+  const description = document.createElement('dd');
+  description.textContent = spells.range;
+  title.appendChild(description);
+  card.append(title);
+}
+
 //Duration
+function spellDuration(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-duration';
+  title.textContent = 'Duration:';
+  const description = document.createElement('dd');
+  description.textContent = spells.duration;
+  title.appendChild(description);
+  card.append(title);
+}
+
 //Casting Time
+function spellCastingTime(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-castingTime';
+  title.textContent = 'Casting Time:';
+  const description = document.createElement('dd');
+  description.textContent = spells.casting_time;
+  title.appendChild(description);
+  card.append(title);
+}
+
 //Attack Type
+
 //Damage Type (name)
+
 //Damage at Slot Level
+
 //Damage at Character Level
+
 //DC Type(name)
 //DC Success
 //DC desc

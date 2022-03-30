@@ -144,6 +144,16 @@ function spellName(spells, card) {
   title.appendChild(description);
   card.append(title);
 }
+//Level
+function spellLevel(spells, card) {
+  const title = document.createElement('dt');
+  title.className = 'spell-level';
+  title.textContent = 'Level:';
+  const description = document.createElement('dd');
+  description.textContent = spells.level;
+  title.appendChild(description);
+  card.append(title);
+}
 
 
 

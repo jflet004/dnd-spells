@@ -35,52 +35,52 @@ function noSpellErrorMsg() {
 
 function createSpellCard(spells) {
   //Grabs and creates area where spell cards will be displayed
-  const spellDisplay = document.querySelector('#spell-card-display');
-  const spellCard = document.createElement('div');
-  spellCard.className = 'spell-card';
+  const cardDisplay = document.querySelector('#spell-card-display');
+  const card = document.createElement('div');
+  card.className = 'spell-card';
 
   //Creates button to remove each spell card
   const delBtn = document.createElement('button');
   delBtn.className = 'xBtn';
   delBtn.textContent = 'x';
-  delBtn.addEventListener('click', () => spellCard.remove());
-  spellCard.appendChild(delBtn);
+  delBtn.addEventListener('click', () => card.remove());
+  card.appendChild(delBtn);
 
   
   //Spell card components
   const keys = Object.keys(spells);
   const dmg = 'damage';
   if(keys.includes(dmg)) {
-    spellName(spells, spellCard);
-    spellLevel(spells, spellCard);
-    spellSchool(spells, spellCard)
-    spellDescription(spells, spellCard);
-    spellHigherLevel(spells, spellCard);
-    spellRange(spells, spellCard);
-    spellDuration(spells, spellCard);
-    spellCastingTime(spells, spellCard);
-    spellAttackType(spells, spellCard);
-    spellDamageType(spells, spellCard);
-    spellDamageAtSlotLevel(spells, spellCard);
-    spellDamageAtCharacterLevel(spells, spellCard);
-    spellDc(spells, spellCard);
-    spellAreaOfEffect(spells, spellCard);
+    spellName(spells, card);
+    spellLevel(spells, card);
+    spellSchool(spells, card)
+    spellDescription(spells, card);
+    spellHigherLevel(spells, card);
+    spellRange(spells, card);
+    spellDuration(spells, card);
+    spellCastingTime(spells, card);
+    spellAttackType(spells, card);
+    spellDamageType(spells, card);
+    spellDamageAtSlotLevel(spells, card);
+    spellDamageAtCharacterLevel(spells, card);
+    spellDc(spells, card);
+    spellAreaOfEffect(spells, card);
   } else {
-    spellName(spells, spellCard);
-    spellLevel(spells, spellCard);
-    spellSchool(spells, spellCard)
-    spellDescription(spells, spellCard);
-    spellHigherLevel(spells, spellCard);
-    spellHealLevel(spells, spellCard);
-    spellRange(spells, spellCard);
-    spellDuration(spells, spellCard);
-    spellCastingTime(spells, spellCard);
-    spellDc(spells, spellCard);
-    spellAreaOfEffect(spells, spellCard);
+    spellName(spells, card);
+    spellLevel(spells, card);
+    spellSchool(spells, card)
+    spellDescription(spells, card);
+    spellHigherLevel(spells, card);
+    spellHealLevel(spells, card);
+    spellRange(spells, card);
+    spellDuration(spells, card);
+    spellCastingTime(spells, card);
+    spellDc(spells, card);
+    spellAreaOfEffect(spells, card);
 
   }
   //Appends delete button to cards and cards to DOM
-  spellDisplay.appendChild(spellCard);
+  cardDisplay.appendChild(card);
 }
 
 

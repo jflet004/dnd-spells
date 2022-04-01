@@ -2,8 +2,8 @@ const form = document.querySelector('#search-spell');
 const input = document.querySelector('#search-box');
 
 document.addEventListener('DOMContentLoaded', () => {
-  form.addEventListener('submit', handleSubmit)
-  input.addEventListener('keydown', handleKeyDown)
+  form.addEventListener('submit', handleSubmit);
+  input.addEventListener('keydown', handleKeyDown);
 });
 
 function handleKeyDown(e) {
@@ -35,21 +35,17 @@ function noSpellErrorMsg() {
 
 //Content to render the spell cards to the screen
 function renderSpellCard(spells) {
-
-  //Grabs and creates area where spell cards will be displayed
   const cardDisplay = document.querySelector('#spell-card-display');
   const card = document.createElement('div');
   card.className = 'spell-card';
 
-  //Creates button to remove each spell card
   const btnX = document.createElement('button');
   btnX.className = 'xBtn';
   btnX.textContent = 'x';
   btnX.addEventListener('click', () => card.remove());
   card.appendChild(btnX);
 
-
-  //Spell card components
+  //Spell card sections
   const keys = Object.keys(spells);
   const dmg = 'damage';
   if (keys.includes(dmg)) {
@@ -79,14 +75,12 @@ function renderSpellCard(spells) {
     spellCastingTime(spells, card);
     spellDc(spells, card);
     spellAreaOfEffect(spells, card);
-
   }
-  //Appends delete button to cards and cards to DOM
   cardDisplay.appendChild(card);
 }
 
 //Functions to render sections into card
-//Name
+
 function spellName(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-name';
@@ -97,7 +91,6 @@ function spellName(spells, card) {
   card.append(title);
 }
 
-//Level
 function spellLevel(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-level';
@@ -108,7 +101,6 @@ function spellLevel(spells, card) {
   card.append(title);
 }
 
-//School
 function spellSchool(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-school';
@@ -119,7 +111,6 @@ function spellSchool(spells, card) {
   card.append(title);
 }
 
-//Description
 function spellDescription(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-description';
@@ -130,7 +121,6 @@ function spellDescription(spells, card) {
   card.append(title);
 }
 
-//Higher Level
 function spellHigherLevel(spells, card) {
   if (spells.higher_level.length !== 0) {
     const title = document.createElement('dt');
@@ -143,7 +133,6 @@ function spellHigherLevel(spells, card) {
   }
 }
 
-//Heal at Slot Level
 function spellHealLevel(spells, card) {
   if (spells.heal_at_slot_level) {
     const title = document.createElement('dt');
@@ -162,7 +151,6 @@ function spellHealLevel(spells, card) {
   }
 }
 
-//Range
 function spellRange(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-range';
@@ -173,7 +161,6 @@ function spellRange(spells, card) {
   card.append(title);
 }
 
-//Duration
 function spellDuration(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-duration';
@@ -184,7 +171,6 @@ function spellDuration(spells, card) {
   card.append(title);
 }
 
-//Casting Time
 function spellCastingTime(spells, card) {
   const title = document.createElement('dt');
   title.className = 'spell-castingTime';
@@ -195,7 +181,6 @@ function spellCastingTime(spells, card) {
   card.append(title);
 }
 
-//Attack Type
 function spellAttackType(spells, card) {
   if (spells.attack_type) {
     const title = document.createElement('dt');
@@ -208,7 +193,6 @@ function spellAttackType(spells, card) {
   }
 }
 
-//Damage Type (name)
 function spellDamageType(spells, card) {
   if (spells.damage) {
     const title = document.createElement('dt');
@@ -221,7 +205,6 @@ function spellDamageType(spells, card) {
   }
 }
 
-//Damage at Slot Level
 function spellDamageAtSlotLevel(spells, card) {
   if (spells.damage.damage_at_slot_level) {
     const title = document.createElement('dt');
@@ -240,7 +223,6 @@ function spellDamageAtSlotLevel(spells, card) {
   }
 }
 
-//Damage at Character Level
 function spellDamageAtCharacterLevel(spells, card) {
   if (spells.damage.damage_at_character_level) {
     const title = document.createElement('dt');
@@ -259,7 +241,6 @@ function spellDamageAtCharacterLevel(spells, card) {
   }
 }
 
-//DC
 function spellDc(spells, card) {
   if (spells.dc) {
     const title = document.createElement('dt');
@@ -278,7 +259,6 @@ function spellDc(spells, card) {
   }
 }
 
-//Area of Effect
 function spellAreaOfEffect(spells, card) {
   if (spells.area_of_effect) {
     const title = document.createElement('dt');

@@ -17,7 +17,8 @@ body {
   font-family: fantasy;
 }
 
-.page-header, .page-subHeader {
+.page-header,
+.page-subHeader {
   text-shadow: 2px 2px 7px black;
   font-weight: bold;
 }
@@ -41,9 +42,9 @@ form {
   padding-bottom: 5px;
 }
 
-form, #search-box {
+form,
+#search-box {
   font-size: 20px;
-
 }
 .add-btn {
   background-color: #750e05;
@@ -81,13 +82,15 @@ dt {
   text-shadow: 0 0 1px black;
 }
 
-dd, .level-list {
+dd,
+.level-list {
   font-family: fantasy;
   font-size: 16px;
-  color: white
+  color: white;
 }
 
-#error-space, #error-spell {
+#error-space,
+#error-spell {
   color: red;
   text-shadow: 0 0 1px red;
   font-weight: bold;

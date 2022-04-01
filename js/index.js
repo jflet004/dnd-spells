@@ -19,8 +19,8 @@ function handleSubmit(e) {
   const spellNameInput = e.target[0].value;
   fetch(`https://www.dnd5eapi.co/api/spells/${spellNameInput}`)
     .then(response => response.json())
-    .then(spellData => createSpellCard(spellData))
-    .catch((error) => {
+    .then(spellData => renderSpellCard(spellData))
+    .catch(error => {
       console.log(error);
       noSpellErrorMsg();
     });
@@ -33,24 +33,26 @@ function noSpellErrorMsg() {
   setTimeout(() => noSpell.style.display = 'none', 3000);
 }
 
-function createSpellCard(spells) {
+//Content to render the spell cards to the screen
+function renderSpellCard(spells) {
+
   //Grabs and creates area where spell cards will be displayed
   const cardDisplay = document.querySelector('#spell-card-display');
   const card = document.createElement('div');
   card.className = 'spell-card';
 
   //Creates button to remove each spell card
-  const delBtn = document.createElement('button');
-  delBtn.className = 'xBtn';
-  delBtn.textContent = 'x';
-  delBtn.addEventListener('click', () => card.remove());
-  card.appendChild(delBtn);
+  const btnX = document.createElement('button');
+  btnX.className = 'xBtn';
+  btnX.textContent = 'x';
+  btnX.addEventListener('click', () => card.remove());
+  card.appendChild(btnX);
 
-  
+
   //Spell card components
   const keys = Object.keys(spells);
   const dmg = 'damage';
-  if(keys.includes(dmg)) {
+  if (keys.includes(dmg)) {
     spellName(spells, card);
     spellLevel(spells, card);
     spellSchool(spells, card)
@@ -83,7 +85,7 @@ function createSpellCard(spells) {
   cardDisplay.appendChild(card);
 }
 
-
+//Functions to render sections into card
 //Name
 function spellName(spells, card) {
   const title = document.createElement('dt');

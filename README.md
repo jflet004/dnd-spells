@@ -8,7 +8,7 @@
 
 To install, just fork this [repository](https://github.com/jflet004/dnd-spells).
 
-![GIF](images/forkAndClone\(1).gif)
+![GIF](images/forkAndClone.gif)
 
 Once you copy the HTTPS link, head over to the terminal and clone it.
 
@@ -26,7 +26,7 @@ cd dnd-spells
 
 You can open the application by typing `open index.html`(for macs) or `explorer.exe index.html` (for windows) in your terminal. Start by typing in the name of the spell you want information on. You can add as many spells as you want. Once you are done with them, you can remove them by clicking on the top right "X". Enjoy!
 
-![GIF](images/usage.gif)
+![GIF](images/p1Preview.gif)
 
 ## Contributing
 

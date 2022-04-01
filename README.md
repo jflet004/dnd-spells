@@ -8,7 +8,7 @@
 
 To install, just fork this [repository](https://github.com/jflet004/dnd-spells).
 
-![GIF](images/forkAndClone.gif)
+![GIF](images/forkAndClone\(1).gif)
 
 Once you copy the HTTPS link, head over to the terminal and clone it.
 

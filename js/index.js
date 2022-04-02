@@ -16,7 +16,7 @@ function handleKeyDown(e) {
 
 function handleSubmit(e) {
   e.preventDefault();
-  const spellNameInput = e.target[0].value;
+  const spellNameInput = e.target[0].value.trim();
   fetch(`https://www.dnd5eapi.co/api/spells/${spellNameInput}`)
     .then(response => response.json())
     .then(spellData => renderSpellCard(spellData))
@@ -33,9 +33,10 @@ function noSpellErrorMsg() {
   setTimeout(() => noSpell.style.display = 'none', 3000);
 }
 
-//Content to render the spell cards to the screen
+//Content to render spell cards to the screen
 function renderSpellCard(spells) {
   const cardDisplay = document.querySelector('#spell-card-display');
+
   const card = document.createElement('div');
   card.className = 'spell-card';
 
@@ -48,6 +49,7 @@ function renderSpellCard(spells) {
   //Spell card sections
   const keys = Object.keys(spells);
   const dmg = 'damage';
+
   if (keys.includes(dmg)) {
     spellName(spells, card);
     spellLevel(spells, card);
@@ -57,23 +59,23 @@ function renderSpellCard(spells) {
     spellRange(spells, card);
     spellDuration(spells, card);
     spellCastingTime(spells, card);
+    //- - - - - - - - - - - - - - - - - - 
     spellAttackType(spells, card);
     spellDamageType(spells, card);
     spellDamageAtSlotLevel(spells, card);
     spellDamageAtCharacterLevel(spells, card);
-    spellDc(spells, card);
-    spellAreaOfEffect(spells, card);
   } else {
     spellName(spells, card);
     spellLevel(spells, card);
     spellSchool(spells, card)
     spellDescription(spells, card);
     spellHigherLevel(spells, card);
-    spellHealLevel(spells, card);
     spellRange(spells, card);
     spellDuration(spells, card);
     spellCastingTime(spells, card);
+    //- - - - - - - - - - - - - - - - - - 
     spellDc(spells, card);
+    spellHealLevel(spells, card);
     spellAreaOfEffect(spells, card);
   }
   cardDisplay.appendChild(card);
@@ -130,24 +132,6 @@ function spellHigherLevel(spells, card) {
     description.textContent = spells.higher_level;
     title.appendChild(description);
     card.append(title);
-  }
-}
-
-function spellHealLevel(spells, card) {
-  if (spells.heal_at_slot_level) {
-    const title = document.createElement('dt');
-    title.className = 'spell-at-slotLevel'
-    title.textContent = 'Heal at Slot Level: ';
-    const list = document.createElement('ul');
-    list.className = 'level-list'
-    Object.entries(spells.heal_at_slot_level).forEach(element => {
-      const level = document.createElement('li');
-      level.className = 'spell-levelItem'
-      level.textContent = `Lvl ${element[0]}: ${element[1]}`;
-      list.appendChild(level);
-      title.appendChild(list);
-      card.append(title);
-    });
   }
 }
 
@@ -259,6 +243,24 @@ function spellDc(spells, card) {
   }
 }
 
+function spellHealLevel(spells, card) {
+  if (spells.heal_at_slot_level) {
+    const title = document.createElement('dt');
+    title.className = 'spell-at-slotLevel'
+    title.textContent = 'Heal at Slot Level: ';
+    const list = document.createElement('ul');
+    list.className = 'level-list'
+    Object.entries(spells.heal_at_slot_level).forEach(element => {
+      const level = document.createElement('li');
+      level.className = 'spell-levelItem'
+      level.textContent = `Lvl ${element[0]}: ${element[1]}`;
+      list.appendChild(level);
+      title.appendChild(list);
+      card.append(title);
+    });
+  }
+}
+
 function spellAreaOfEffect(spells, card) {
   if (spells.area_of_effect) {
     const title = document.createElement('dt');
@@ -272,4 +274,14 @@ function spellAreaOfEffect(spells, card) {
     title.appendChild(description2);
     card.append(title);
   }
+
+  // function renderSpell(spells, card, prop1) {
+  //   const title = document.createElement('dt');
+  //   title.className = `spell-${prop1}`;
+  //   title.textContent = `${prop1}`.toUpperCase().replace('_', ' ');
+  //   const description = document.createElement('dd');
+  //   description.textContent = spells[prop1];
+  //   title.appendChild(description);
+  //   card.append(title);
+  // }
 }

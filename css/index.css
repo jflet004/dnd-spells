@@ -58,16 +58,15 @@ form,
 }
 
 .spell-card {
-  box-shadow: 5px 5px 5px black;
-  display: inline-block;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-color: #8e2117;
   max-width: 550px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  border-radius: 5px;
+  vertical-align: top;
+  margin: 50px 10px 10px 10px;
+  padding: 10px;
+  box-shadow: 0px 1px 10px black;
+  display: inline-block;
+  background-color: #8e2117;
+  font-family: fantasy;
 }
 
 .xBtn {

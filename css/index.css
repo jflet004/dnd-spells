@@ -1,5 +1,5 @@
 body {
-  background-image: url('../images/parchmentBackground.png');
+  background-image: url("../images/parchmentBackground.png");
   background-size: 1900px;
 }
 
@@ -46,6 +46,7 @@ form,
 #search-box {
   font-size: 20px;
 }
+
 .add-btn {
   background-color: #750e05;
   border-color: black;
@@ -103,4 +104,8 @@ dd,
   margin-top: 0px;
   padding: 0px;
   margin-left: 40px;
+}
+
+.bold {
+  font-weight: bold;
 }

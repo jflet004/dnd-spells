@@ -1,9 +1,19 @@
-const form = document.querySelector('#search-spell');
-const input = document.querySelector('#search-box');
-
 document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('#search-spell');
+  const input = document.querySelector('#search-box');
+
   form.addEventListener('submit', handleSubmit);
   input.addEventListener('keydown', handleKeyDown);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const spellNameInput = event.target[0].value.trim();
+    fetch(`https://www.dnd5eapi.co/api/spells/${spellNameInput}`)
+      .then(response => response.json())
+      .then(spellData => renderSpellCard(spellData))
+      .catch(() => noSpellErrorMsg());
+    form.reset();
+  }
 });
 
 function handleKeyDown(e) {
@@ -14,29 +24,14 @@ function handleKeyDown(e) {
   }
 }
 
-function handleSubmit(e) {
-  e.preventDefault();
-  const spellNameInput = e.target[0].value.trim();
-  fetch(`https://www.dnd5eapi.co/api/spells/${spellNameInput}`)
-    .then(response => response.json())
-    .then(spellData => renderSpellCard(spellData))
-    .catch(error => {
-      console.log(error);
-      noSpellErrorMsg();
-    });
-  form.reset();
-}
-
 function noSpellErrorMsg() {
   const noSpell = document.querySelector('#error-spell');
   noSpell.style.display = 'block';
   setTimeout(() => noSpell.style.display = 'none', 3000);
 }
 
-//Content to render spell cards to the screen
 function renderSpellCard(spells) {
   const cardDisplay = document.querySelector('#spell-card-display');
-
   const card = document.createElement('div');
   card.className = 'spell-card';
 
@@ -46,7 +41,6 @@ function renderSpellCard(spells) {
   btnX.addEventListener('click', () => card.remove());
   card.appendChild(btnX);
 
-  //Spell card sections
   const keys = Object.keys(spells);
   const dmg = 'damage';
 
@@ -80,8 +74,6 @@ function renderSpellCard(spells) {
   }
   cardDisplay.appendChild(card);
 }
-
-//Functions to render sections into card
 
 function spellName(spells, card) {
   const title = document.createElement('dt');
@@ -253,7 +245,7 @@ function spellHealLevel(spells, card) {
     Object.entries(spells.heal_at_slot_level).forEach(element => {
       const level = document.createElement('li');
       level.className = 'spell-levelItem'
-      level.textContent = `Lvl ${element[0]}: ${element[1]}`;
+      level.textContent = `Lvl ${element[0]} --> ${element[1]}`;
       list.appendChild(level);
       title.appendChild(list);
       card.append(title);
@@ -274,14 +266,4 @@ function spellAreaOfEffect(spells, card) {
     title.appendChild(description2);
     card.append(title);
   }
-
-  // function renderSpell(spells, card, prop1) {
-  //   const title = document.createElement('dt');
-  //   title.className = `spell-${prop1}`;
-  //   title.textContent = `${prop1}`.toUpperCase().replace('_', ' ');
-  //   const description = document.createElement('dd');
-  //   description.textContent = spells[prop1];
-  //   title.appendChild(description);
-  //   card.append(title);
-  // }
 }

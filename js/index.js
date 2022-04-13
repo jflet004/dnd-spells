@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', handleSubmit);
   input.addEventListener('keydown', handleKeyDown);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const spellNameInput = event.target[0].value.trim();
+  function handleSubmit(e) {
+    e.preventDefault();
+    const spellNameInput = e.target[0].value.trim();
     fetch(`https://www.dnd5eapi.co/api/spells/${spellNameInput}`)
       .then(response => response.json())
       .then(spellData => renderSpellCard(spellData))
@@ -20,14 +20,14 @@ function handleKeyDown(e) {
   const errorMsg = document.querySelector('#error-space');
   if (e.code === 'Space') {
     errorMsg.style.display = 'block';
-    setTimeout(() => errorMsg.style.display = 'none', 5000);
+    setTimeout(() => errorMsg.style.display = 'none', 4000);
   }
 }
 
 function noSpellErrorMsg() {
   const noSpell = document.querySelector('#error-spell');
   noSpell.style.display = 'block';
-  setTimeout(() => noSpell.style.display = 'none', 3000);
+  setTimeout(() => noSpell.style.display = 'none', 4000);
 }
 
 function renderSpellCard(spells) {

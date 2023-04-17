@@ -1,8 +1,8 @@
-# Dungeons and Dragons 5e Spell Organizer
+# SpellBinder
 
 ## Description
 
-[Dungeons and Dragons](https://dnd.wizards.com/) 5e Spell Organizer is a Single Page Application that accesses data from a [public API](https://www.dnd5eapi.co/) and organizes however many spells you need on your screen. I've been playing Dungeons and Dragons for the past 2-3 years and one of the things I struggle with is keeping up with how many, and which spells my character has available at all times; specially during combat situations. This application helps you keep only the spells you need at hand and ready to go, keeping the flow of the game going without interruptions.
+SpellBinder, a [Dungeons and Dragons](https://dnd.wizards.com/) 5e Spell Organizer is a Single Page Application that accesses data from a [public API](https://www.dnd5eapi.co/) and organizes however many spells you need on your screen. I've been playing Dungeons and Dragons for the past 2-3 years and one of the things I struggle with is keeping up with how many, and which spells my character has available at all times; specially during combat situations. This application helps you keep only the spells you need at hand and ready to go, keeping the flow of the game going without interruptions.
 
 ## Installation
 
